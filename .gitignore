@@ -1,0 +1,25 @@
+# Java builds and local tools
+**/target/
+**/build/
+**/.gradle/
+*.class
+*.log
+
+# IDE and OS files
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.DS_Store
+
+# Local credentials and configuration
+.env
+.env.*
+!.env.example
+*.license
+*.licensekey
+secrets/
+
+# Local service data
+**/.local-data/
