@@ -16,8 +16,6 @@ You will be able to follow a snapshot while persistence is delayed, then examine
 
 ## Planned setup
 
-Hazelcast Enterprise Edition, an evaluation license, test-managed members and a database. You will need a local evaluation license to run it.
-
-You will be able to run this example on its own, without building or starting the other projects. Run commands are not available yet.
+Hazelcast Enterprise Edition, test-managed members and a database. See [evaluation licenses](../../README.md#open-source-and-enterprise-edition).
 
 [All examples](../../README.md#examples) · [Learning paths](../../docs/learning-paths.md)

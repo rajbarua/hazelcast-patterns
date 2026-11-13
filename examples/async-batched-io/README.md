@@ -18,6 +18,4 @@ You will be able to inspect concurrent calls and match each response or failure 
 
 A Hazelcast member and a small test service. The required version and edition are not confirmed yet.
 
-You will be able to run this example on its own, without building or starting the other projects. Run commands are not available yet.
-
 [All examples](../../README.md#examples) · [Learning paths](../../docs/learning-paths.md)

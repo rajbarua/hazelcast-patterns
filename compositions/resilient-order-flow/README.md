@@ -21,6 +21,6 @@ You will also see where a guarantee from one stage does or does not carry across
 
 ## Planned setup
 
-You will be able to run this flow without starting the smaller examples. The exact dependencies and run commands are not available yet.
+Dependencies are not confirmed yet.
 
 [Repository home](../../README.md)

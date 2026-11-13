@@ -6,7 +6,7 @@ Keep examples small enough to read and run on their own.
 
 Choose one main question the example will answer. Related patterns can share the same project if they help answer that question. Add a separate example when combining them would make the code harder to follow.
 
-Use a small, synthetic data model. Do not copy private deployment settings, internal links, real customer data or credentials.
+Use a small, synthetic data model.
 
 ## Example structure
 
@@ -24,6 +24,19 @@ example-name/
 This is a suggested Java layout, not a root Maven build. Add scripts or service configuration only when the example needs them. Do not create empty source files or pretend build commands work before there is runnable code.
 
 Each example owns its build and dependencies. It must not depend on sibling examples. A composition also runs independently; it can repeat a small amount of code and link to the simpler explanation.
+
+## Where documentation belongs
+
+Give each piece of information one home and link to it elsewhere:
+
+- Root README: project introduction, example availability and general edition policy.
+- Example README: its requirements, run commands, explanation, diagrams, tests and guarantees.
+- Learning paths: suggested reading order.
+- Pattern index: topics mapped to examples.
+- Diagram guide: how to read the views, without repeating the examples' explanations.
+- CONTRIBUTING.md: authoring conventions. AGENTS.md: agent-specific rules.
+
+Navigation labels and short summaries may repeat when they help readers find their way. Do not duplicate commands, version requirements or full explanations. A planned example should say so locally so a direct link does not imply runnable code.
 
 ## README contents
 

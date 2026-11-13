@@ -18,6 +18,4 @@ You will be able to follow the output of each stage and see what happens when an
 
 An embedded member started by tests. The intended setup uses OSS features; the exact dependency version is not confirmed yet.
 
-You will be able to run this example on its own, without building or starting the other projects. Run commands are not available yet.
-
 [All examples](../../README.md#examples) · [Learning paths](../../docs/learning-paths.md)

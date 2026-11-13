@@ -19,6 +19,4 @@ You will be able to see a small journal overflow and follow recovery without cou
 
 Members started by tests. The required Hazelcast version is not confirmed yet.
 
-You will be able to run this example on its own, without building or starting the other projects. Run commands are not available yet.
-
 [All examples](../../README.md#examples) · [Learning paths](../../docs/learning-paths.md)

@@ -1,6 +1,6 @@
 # Reading the diagrams
 
-The examples will include diagrams alongside the code. There are no diagrams yet.
+The examples include diagrams alongside the code. Start with the [local-compute sequence and ownership diagrams](../../examples/compute-with-data/README.md) to compare client-side updates with owner-side computation.
 
 Different views will help you answer different questions:
 
@@ -11,8 +11,6 @@ Different views will help you answer different questions:
 | Failure and recovery | What stops working, what state survives, and which work runs again? |
 | Sequence | In what order do calls, retries and commits happen? |
 
-For local compute, pay attention to the member and partition boundaries. A step that runs beside its data may avoid a remote fetch, while another step may send data to a different member.
-
-The diagrams will use the same names as the code so you can follow a record from one to the other. Images will appear in the example READMEs. Editable sources will also be available in each example's `diagrams/` folder if you want to explore a variation.
+To explore a variation, edit the Mermaid source in the example README or the source files in its `diagrams/` folder.
 
 [Learning paths](../learning-paths.md) · [Pattern index](../pattern-index.md)

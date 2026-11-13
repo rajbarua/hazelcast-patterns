@@ -15,10 +15,7 @@ This repository contains small Hazelcast examples and larger examples that combi
 
 ## Documentation
 
-- Use simple developer English and short explanations.
-- Write READMEs and learning docs for the learner: explain what they can understand, run and observe. Keep authoring instructions and maintenance checklists in AGENTS.md or CONTRIBUTING.md.
-- Mark planned examples clearly. Do not provide commands as working instructions until they work.
-- Use diagrams when they help explain ownership, data flow or failure behavior. Keep editable sources with exported images.
+- Follow [Contributing](CONTRIBUTING.md) for audience, document ownership, tests and diagrams.
 - Keep Markdown paragraphs on natural lines without forced column wrapping.
 
 ## Validation

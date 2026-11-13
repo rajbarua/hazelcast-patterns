@@ -19,6 +19,4 @@ You will be able to follow restarts around delivery and commit boundaries, and e
 
 Test-managed members, Kafka and a database. The exact versions and edition requirements are not confirmed yet.
 
-You will be able to run this example on its own, without building or starting the other projects. Run commands are not available yet.
-
 [All examples](../../README.md#examples) · [Learning paths](../../docs/learning-paths.md)

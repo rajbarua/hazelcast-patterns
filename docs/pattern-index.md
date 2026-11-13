@@ -1,8 +1,8 @@
 # Pattern index
 
-Find a topic below and open the example that explains it. Some examples cover several related patterns. All examples are currently planned; there is no runnable code yet.
+Find a topic below. See the [example list](../README.md#examples) for availability.
 
-| Topics | Planned example |
+| Topics | Example |
 | --- | --- |
 | Partition keys, data ownership, local compute, EntryProcessors, migration | [Compute with data](../examples/compute-with-data/README.md) |
 | Journal events, stage maps, payload and status, enrichment, branching | [Map journal workflow](../examples/map-journal-workflow/README.md) |
@@ -15,5 +15,3 @@ Find a topic below and open the example that explains it. Some examples cover se
 | Deterministic output IDs, pending handoff, transactional delivery, sent evidence | [Reliable publishing](../examples/reliable-publishing/README.md) |
 | Compact serialization, state DTOs, snapshots, restore, class visibility | [Snapshot state](../examples/snapshot-state/README.md) |
 | How validation, aggregation, recovery and delivery interact | [Resilient order flow](../compositions/resilient-order-flow/README.md) |
-
-If you are new to these topics, the [learning paths](learning-paths.md) suggest where to start.
