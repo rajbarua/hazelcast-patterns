@@ -4,7 +4,7 @@ Choose a path below. Check the [example list](../README.md#examples) for availab
 
 ## Understand local compute
 
-1. [Compute with data](../examples/compute-with-data/README.md)
+1. [Compute on data](../examples/compute-on-data/README.md)
 2. [Map journal workflow](../examples/map-journal-workflow/README.md)
 3. [Scatter/gather](../examples/scatter-gather/README.md)
 

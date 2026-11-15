@@ -7,7 +7,7 @@ A small order workflow will combine validation, item aggregation, recovery and n
 ## Patterns you will follow
 
 - [Map journal workflow](../../examples/map-journal-workflow/README.md) for stage transitions.
-- [Compute with data](../../examples/compute-with-data/README.md) for work near its state.
+- [Compute on data](../../examples/compute-on-data/README.md) for work near its state.
 - [Scatter/gather](../../examples/scatter-gather/README.md) for item completion.
 - [Eventual joins](../../examples/eventual-joins/README.md) for late dependencies.
 - [Snapshot state](../../examples/snapshot-state/README.md) and [journal recovery](../../examples/journal-recovery/README.md) for recovery.

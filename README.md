@@ -4,7 +4,7 @@ Small examples of distributed data and stream processing with Hazelcast. Familia
 
 ## Start here
 
-Start with [Compute with data](examples/compute-with-data/README.md#run-it), including its setup and run commands. Each example runs independently; there is no root build. Requirements, diagrams, tests and guarantees live in the example's README.
+Start with [Compute on data](examples/compute-on-data/README.md#run-it), including its setup and run commands. Each example runs independently; there is no root build. Requirements, diagrams, tests and guarantees live in the example's README.
 
 For a suggested order, follow the [learning paths](docs/learning-paths.md). To find a particular topic, use the [pattern index](docs/pattern-index.md).
 
@@ -12,7 +12,7 @@ For a suggested order, follow the [learning paths](docs/learning-paths.md). To f
 
 | Example | Status |
 | --- | --- |
-| [Compute with data](examples/compute-with-data/README.md) | Runnable |
+| [Compute on data](examples/compute-on-data/README.md) | Runnable |
 | [Map journal workflow](examples/map-journal-workflow/README.md) | Planned |
 | [Scatter/gather](examples/scatter-gather/README.md) | Planned |
 | [Eventual joins](examples/eventual-joins/README.md) | Planned |

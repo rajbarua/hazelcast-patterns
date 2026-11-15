@@ -1,6 +1,6 @@
 # Reading the diagrams
 
-The examples include diagrams alongside the code. Start with the [local-compute sequence and ownership diagrams](../../examples/compute-with-data/README.md) to compare client-side updates with owner-side computation.
+The examples include diagrams alongside the code. Start with the [local-compute sequence and ownership diagrams](../../examples/compute-on-data/README.md) to compare client-side updates with owner-side computation.
 
 Different views will help you answer different questions:
 
