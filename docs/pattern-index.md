@@ -5,7 +5,7 @@ Find a topic below. See the [example list](../README.md#examples) for availabili
 | Topics | Example |
 | --- | --- |
 | Partition keys, data ownership, local compute, EntryProcessors, migration | [Compute on data](../examples/compute-on-data/README.md) |
-| Journal events, stage maps, payload and status, enrichment, branching | [Map journal workflow](../examples/map-journal-workflow/README.md) |
+| Map journal source, order validation, separate status map | [Map journal workflow](../examples/map-journal-workflow/README.md) |
 | Debulking, correlation, expected IDs, duplicate arrivals, completion gates | [Scatter/gather](../examples/scatter-gather/README.md) |
 | Eventual visibility, bounded retries, backoff, timeouts | [Eventual joins](../examples/eventual-joins/README.md) |
 | Journal overflow, retained map state, replay overlap, processing time | [Journal recovery](../examples/journal-recovery/README.md) |
