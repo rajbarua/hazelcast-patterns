@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="Electron">
+  <diagram id="scatter-gather" name="Scatter/gather">
+    <mxGraphModel dx="844" dy="531" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="member" parent="1" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=16;fontColor=#182735;strokeWidth=1.5;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=8;fontStyle=1;fillColor=#ffffff;strokeColor=#667e92;" value="Embedded Hazelcast member" vertex="1">
+          <mxGeometry height="1226" width="650" as="geometry" />
+        </mxCell>
+        <mxCell id="orders" parent="member" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=16;fontColor=#182735;strokeWidth=1.5;shape=cylinder3;size=10;fillColor=#e3f2fa;strokeColor=#28739a;" value="" vertex="1">
+          <mxGeometry height="74" width="280" x="185" y="42" as="geometry" />
+        </mxCell>
+        <mxCell id="orders-label" parent="orders" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#182735;" value="orders IMap&#10;order-1 contains line-1 and line-2" vertex="1">
+          <mxGeometry height="37" width="264" x="8" y="27" as="geometry" />
+        </mxCell>
+        <mxCell id="scatter" parent="member" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=16;fontColor=#182735;strokeWidth=1.5;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=8;fontStyle=1;align=left;spacingLeft=14;fillColor=#f4f8fb;strokeColor=#9cabb8;" value="Scatter streaming job" vertex="1">
+          <mxGeometry height="244" width="460" x="95" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="source" parent="scatter" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=16;fontColor=#182735;strokeWidth=1.5;fillColor=#ffffff;strokeColor=#7e93a6;" value="mapJournal(orders)&#10;Read order events" vertex="1">
+          <mxGeometry height="48" width="250" x="105" y="36" as="geometry" />
+        </mxCell>
+        <mxCell id="pending" parent="scatter" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=16;fontColor=#182735;strokeWidth=1.5;fillColor=#ffffff;strokeColor=#7e93a6;" value="filter&#10;Filter out completed orders" vertex="1">
+          <mxGeometry height="48" width="250" x="105" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="split" parent="scatter" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=16;fontColor=#182735;strokeWidth=1.5;fillColor=#ffffff;strokeColor=#7e93a6;" value="flatMap&#10;Split order-1 into two tasks" vertex="1">
+          <mxGeometry height="48" width="250" x="105" y="172" as="geometry" />
+        </mxCell>
+        <mxCell id="work" parent="member" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=16;fontColor=#182735;strokeWidth=1.5;shape=cylinder3;size=15;fillColor=#e3f2fa;strokeColor=#28739a;container=1;collapsible=0;recursiveResize=0;" value="" vertex="1">
+          <mxGeometry height="156" width="520" x="65" y="454" as="geometry" />
+        </mxCell>
+        <mxCell id="work-label" parent="work" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#182735;fontStyle=1;" value="item-work IMap · stored tasks" vertex="1">
+          <mxGeometry height="23" width="340" x="90" y="37" as="geometry" />
+        </mxCell>
+        <mxCell id="p1" parent="work" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=16;fontColor=#182735;strokeWidth=1.5;fillColor=#ffffff;strokeColor=#7e93a6;" value="Partition A&#10;order-1 / line-1 · total 2" vertex="1">
+          <mxGeometry height="56" width="208" x="36" y="68" as="geometry" />
+        </mxCell>
+        <mxCell id="p2" parent="work" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=16;fontColor=#182735;strokeWidth=1.5;fillColor=#ffffff;strokeColor=#7e93a6;" value="Partition B&#10;order-1 / line-2 · total 2" vertex="1">
+          <mxGeometry height="56" width="208" x="276" y="68" as="geometry" />
+        </mxCell>
+        <mxCell id="j1" parent="member" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=16;fontColor=#182735;strokeWidth=1.5;fillColor=#fff4df;strokeColor=#a1732f;" value="Event journal&#10;Partition A ringbuffer" vertex="1">
+          <mxGeometry height="52" width="208" x="101" y="661" as="geometry" />
+        </mxCell>
+        <mxCell id="j2" parent="member" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=16;fontColor=#182735;strokeWidth=1.5;fillColor=#fff4df;strokeColor=#a1732f;" value="Event journal&#10;Partition B ringbuffer" vertex="1">
+          <mxGeometry height="52" width="208" x="341" y="661" as="geometry" />
+        </mxCell>
+        <mxCell id="gather" parent="member" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=16;fontColor=#182735;strokeWidth=1.5;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=8;fontStyle=1;fillColor=#f4f8fb;strokeColor=#9cabb8;" value="Gather streaming job" vertex="1">
+          <mxGeometry height="344" width="520" x="65" y="744" as="geometry" />
+        </mxCell>
+        <mxCell id="read" parent="gather" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=16;fontColor=#182735;strokeWidth=1.5;container=1;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=8;fontStyle=1;fillColor=#ffffff;strokeColor=#9cabb8;" value="Gather input by partition" vertex="1">
+          <mxGeometry height="169" width="484" x="18" y="36" as="geometry" />
+        </mxCell>
+        <mxCell id="v1" parent="read" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=16;fontColor=#182735;strokeWidth=1.5;fillColor=#ffffff;strokeColor=#7e93a6;" value="map&#10;Validate line-1" vertex="1">
+          <mxGeometry height="48" width="208" x="18" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="gather-source-1" parent="read" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=16;fontColor=#182735;strokeWidth=1.5;fillColor=#ffffff;strokeColor=#7e93a6;" value="mapJournal(item-work)&#10;Read partition A" vertex="1">
+          <mxGeometry height="48" width="208" x="18" y="36" as="geometry" />
+        </mxCell>
+        <mxCell id="v2" parent="read" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=16;fontColor=#182735;strokeWidth=1.5;fillColor=#ffffff;strokeColor=#7e93a6;" value="map&#10;Validate line-2" vertex="1">
+          <mxGeometry height="48" width="208" x="258" y="104" as="geometry" />
+        </mxCell>
+        <mxCell id="gather-source-2" parent="read" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=16;fontColor=#182735;strokeWidth=1.5;fillColor=#ffffff;strokeColor=#7e93a6;" value="mapJournal(item-work)&#10;Read partition B" vertex="1">
+          <mxGeometry height="48" width="208" x="258" y="36" as="geometry" />
+        </mxCell>
+        <mxCell id="g" parent="gather" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=16;fontColor=#182735;strokeWidth=1.5;fillColor=#ffffff;strokeColor=#7e93a6;" value="mapStateful for order-1&#10;1 of 2 lines → wait&#10;2 of 2 lines → emit result" vertex="1">
+          <mxGeometry height="70" width="280" x="120" y="251" as="geometry" />
+        </mxCell>
+        <mxCell id="done" parent="member" style="whiteSpace=wrap;html=0;fontFamily=Arial;fontSize=16;fontColor=#182735;strokeWidth=1.5;shape=cylinder3;size=10;fillColor=#e3f2fa;strokeColor=#28739a;" value="" vertex="1">
+          <mxGeometry height="74" width="280" x="185" y="1132" as="geometry" />
+        </mxCell>
+        <mxCell id="done-label" parent="done" style="text;html=0;whiteSpace=wrap;align=center;verticalAlign=middle;spacing=0;fontFamily=Arial;fontSize=16;fontColor=#182735;" value="orders · same IMap&#10;order-1 with both line results" vertex="1">
+          <mxGeometry height="37" width="264" x="8" y="27" as="geometry" />
+        </mxCell>
+        <mxCell id="orders-source" edge="1" parent="member" source="orders" style="endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#526b7e;fontColor=#354b5e;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;html=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="source" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="source-pending" edge="1" parent="member" source="source" style="endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#526b7e;fontColor=#354b5e;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;html=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="pending" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pending-split" edge="1" parent="member" source="pending" style="endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#526b7e;fontColor=#354b5e;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;html=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="split" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="split-p1" edge="1" parent="member" source="split" style="endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#526b7e;fontColor=#354b5e;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;html=0;exitX=0.22;exitY=1;entryX=0.5;entryY=0;" target="p1" value="Write task">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="205" y="416" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="split-p2" edge="1" parent="member" source="split" style="endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#526b7e;fontColor=#354b5e;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;html=0;exitX=0.78;exitY=1;entryX=0.5;entryY=0;" target="p2" value="Write task">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="445" y="416" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1-j1" edge="1" parent="member" source="p1" style="endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#526b7e;fontColor=#354b5e;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;html=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="j1" value="Append change event">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p2-j2" edge="1" parent="member" source="p2" style="endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#526b7e;fontColor=#354b5e;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;html=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="j2" value="Append change event">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="j1-gather-source-1" edge="1" parent="member" source="j1" style="endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#526b7e;fontColor=#354b5e;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;html=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="gather-source-1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gather-source-1-v1" edge="1" parent="member" source="gather-source-1" style="endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#526b7e;fontColor=#354b5e;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;html=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="v1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="j2-gather-source-2" edge="1" parent="member" source="j2" style="endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#526b7e;fontColor=#354b5e;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;html=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="gather-source-2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="gather-source-2-v2" edge="1" parent="member" source="gather-source-2" style="endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#526b7e;fontColor=#354b5e;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;html=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="v2" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="v1-g" edge="1" parent="member" source="v1" style="endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#526b7e;fontColor=#354b5e;fontFamily=Arial;fontSize=14;labelBackgroundColor=#f4f8fb;html=0;exitX=0.5;exitY=1;entryX=0.23;entryY=0;" target="g" value="Group by order-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-17" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="v2-g" edge="1" parent="member" source="v2" style="endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#526b7e;fontColor=#354b5e;fontFamily=Arial;fontSize=14;labelBackgroundColor=#f4f8fb;html=0;exitX=0.5;exitY=1;entryX=0.77;entryY=0;" target="g" value="Group by order-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="17" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="g-done" edge="1" parent="member" source="g" style="endArrow=block;endFill=1;strokeWidth=1.5;strokeColor=#526b7e;fontColor=#354b5e;fontFamily=Arial;fontSize=14;labelBackgroundColor=#ffffff;html=0;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="done" value="Write back to the parent order">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

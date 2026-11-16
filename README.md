@@ -14,7 +14,7 @@ For a suggested order, follow the [learning paths](docs/learning-paths.md). To f
 | --- | --- |
 | [Compute on data](examples/compute-on-data/README.md) | Runnable |
 | [Map journal workflow](examples/map-journal-workflow/README.md) | Runnable |
-| [Scatter/gather](examples/scatter-gather/README.md) | Planned |
+| [Scatter/gather](examples/scatter-gather/README.md) | Runnable |
 | [Eventual joins](examples/eventual-joins/README.md) | Planned |
 | [Journal recovery](examples/journal-recovery/README.md) | Planned |
 | [Durable deduplication (EE)](examples/durable-dedup-ee/README.md) | Planned |
