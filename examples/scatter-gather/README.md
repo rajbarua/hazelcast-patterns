@@ -1,6 +1,8 @@
 # Scatter/gather
 
-The scatter job splits each order into line tasks. The gather job validates the lines independently and writes the result back to `orders` only after every line has a result. An order is rejected if any line has a nonpositive quantity.
+Some workflows can process pieces of a request independently but need every result before they can continue. Scatter/gather splits the work into tasks, correlates their results by the original request ID, and completes the request only after every distinct task reports back.
+
+The walkthrough validates order lines independently and writes the combined result back to the original order. A line with a nonpositive quantity causes the order to be rejected once all lines have reported.
 
 ## Run it
 

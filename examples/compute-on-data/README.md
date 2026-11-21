@@ -1,6 +1,8 @@
 # Compute on data
 
-This example starts three Hazelcast members and a Java client on your machine. You will compare a client-side `get`/`put` with an `EntryProcessor`, see which member executes the processor, and repeat the reservation after that member leaves.
+When several clients read and update the same entry in a distributed map, a client-side read-modify-write takes separate calls and can lose concurrent updates. An `EntryProcessor` lets the member that owns the entry check and update it atomically in one operation.
+
+The walkthrough compares both approaches using a warehouse stock reservation, then repeats the reservation after partition ownership moves to another member.
 
 ## Run it
 

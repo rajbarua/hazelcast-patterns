@@ -1,6 +1,8 @@
 # Map journal workflow
 
-A map journal records changes to a Hazelcast map as events. In this example, a Jet pipeline reads the journal for `orders` and writes each order's validation result to `order-validation`. The separate output map keeps status writes from feeding back into the input journal.
+Applications often need to trigger downstream work when stored data changes. A Hazelcast map journal records those changes as events, so a Jet job can process them as they arrive without polling the map.
+
+In the walkthrough, each add or update in `orders` triggers validation in a Jet pipeline. The job writes the result to `order-validation`, keeping status writes out of the input journal.
 
 ## Run it
 

@@ -7,7 +7,7 @@ Find a topic below. See the [example list](../README.md#examples) for availabili
 | Partition keys, data ownership, local compute, EntryProcessors, migration | [Compute on data](../examples/compute-on-data/README.md) |
 | Map journal source, order validation, separate status map | [Map journal workflow](../examples/map-journal-workflow/README.md) |
 | Debulking with `flatMap`, parent and line correlation, completion gates, state deletion | [Scatter/gather](../examples/scatter-gather/README.md) |
-| Eventual visibility, bounded retries, backoff, timeouts | [Eventual joins](../examples/eventual-joins/README.md) |
+| Eventual visibility, asynchronous lookups with retries, keyed joins across two streams | [Eventual joins](../examples/eventual-joins/README.md) |
 | Journal overflow, retained map state, replay overlap, processing time | [Journal recovery](../examples/journal-recovery/README.md) |
 | Retry identity, business duplicates, write-behind durability, flush on snapshot | [Durable deduplication, EE](../examples/durable-dedup-ee/README.md) |
 | Async calls, batches, bounded concurrency, partial failures | [Async batched I/O](../examples/async-batched-io/README.md) |
